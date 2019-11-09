@@ -92,7 +92,7 @@ def torref(M, order):
             
             #Set the rest of the values in the column to 0
             for i in range(rowCount):
-                if i != r:
+                if ((i!= r) and (M[i][lead]!=0)):
                     pivot = M[i][lead]
                     M[i] = [ (iv - pivot*rv)%order for rv,iv in zip(M[r],M[i])]
             lead += 1
@@ -113,9 +113,10 @@ def removeZero(M):
     return newM
 def Legendre(n, p):
     """
-    Function for checking if n is a quadratic residue of odd prime p
+    Function for checking if n is a quadratic residue of odd p
     Return:
       1 if n is a quadratic residue
+      0 if n = 0(mod p)
       -1 if n is not a quadratic residue
     """
     return power(n, (p-1)//2, p)
