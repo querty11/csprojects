@@ -237,8 +237,8 @@ def index_calculus(g, h, p, smoothness, slack, order):
       time2 = time.time()
       print("Time to get rref: "+str(time2-time1))
       print ('successfully get',  len(relations), ' relations')
-      for rw in relations:
-          print (" ".join( (str(rv) for rv in rw)))
+      #for rw in relations:
+       #   print (" ".join( (str(rv) for rv in rw)))
   
   #step 2: try to factorize h*g^s into our factor base
   while True:
